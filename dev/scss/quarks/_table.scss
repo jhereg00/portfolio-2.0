@@ -1,0 +1,44 @@
+/***
+ * Table
+ *
+ * html:
+ *   <table>
+ *     <tr>
+ *       <th>Lorem</th>
+ *       <td>Ipsum</td>
+ *       <td>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Esse
+ *          perspiciatis vitae sunt, magnam blanditiis unde velit quis perferendis
+ *          iure ut excepturi tempora eos autem accusamus amet et, non? Distinctio,
+ *          eaque.</td>
+ *     </tr>
+ *     <tr>
+ *       <th>Sit</th>
+ *       <td>Amet</td>
+ *       <td>Lorem</td>
+ *     </tr>
+ *     <tr>
+ *       <th>Ipsum</th>
+ *       <td>Dolor</td>
+ *       <td>Sit</td>
+ *     </tr>
+ *   </table>
+ */
+table {
+  display: table;
+  width: 100%;
+  box-sizing: border-box;
+  border-collapse: collapse;
+}
+tr {
+  border-top: 1px solid mix(white, $black, 30%);
+  border-bottom: 1px solid mix(white, $black, 30%);
+}
+th,td {
+  text-align: left;
+  padding: $vr / 2 $wr;
+  vertical-align: top;
+
+  @include mq-lt ($bp-medium) {
+    display: block;
+  }
+}

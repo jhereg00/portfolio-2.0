@@ -1,0 +1,24 @@
+/***
+ * Lists
+ *
+ * html:
+ *    <ul>
+ *      <li>Lorem ipsum dolor sit amet</li>
+ *      <li>Minima recusandae adipisci quidem</li>
+ *      <li>Amet eum non animi soluta</li>
+ *      <li>Saepe commodi nesciunt quaerat quae minima</li>
+ *    </ul>
+ *    <ol>
+ *      <li>Lorem ipsum dolor sit amet</li>
+ *      <li>Minima recusandae adipisci quidem</li>
+ *      <li>Amet eum non animi soluta</li>
+ *      <li>Saepe commodi nesciunt quaerat quae minima</li>
+ *    </ol>
+ */
+ul, ol {
+  margin: $vr * 2 0;
+  padding-left: $wr * 2;
+}
+li {
+  margin: $vr 0;
+}

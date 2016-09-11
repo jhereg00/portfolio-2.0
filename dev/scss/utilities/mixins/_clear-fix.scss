@@ -1,0 +1,18 @@
+/***
+ * Clear Fix
+ *
+ * Uses an `::after` pseudo-element to clear any floats inside this element.
+ *
+ * code:
+ *   @include clearFix;
+ */
+.clear-fix, %clear-fix {
+  &::after {
+    content: '';
+    display: table;
+    clear: both;
+  }
+}
+@mixin clearFix () {
+  @extend %clear-fix;
+}

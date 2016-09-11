@@ -1,0 +1,45 @@
+/***
+ * Power / Exponent Function
+ *
+ * Raises a number to a certain power. Supports integers and .5s as the exponent.
+ *
+ * Useful for diagonal/Pythagorean stuff.
+ *
+ * code:
+ *   pow($base, $exponent)
+ *
+ * @param {number} $base
+ * @param {number} $exponent
+ * @returns {number} $base ^ $exponent
+ */
+@function pow ($base, $exponent) {
+  $unit: $base / stripUnits($base);
+  $base: stripUnits($base);
+  $value: stripUnits($base);
+  @if $exponent % 1 != 0 and $exponent % 1 != .5 and $exponent % 1 != -.5 {
+    @error "exponent must be multiple of .5, was #{$exponent}";
+  }
+  @if $exponent >= 0 {
+    $num : floor($exponent);
+    @if $num == 0 {
+      $value : 1;
+    }
+    @for $i from 0 through $num {
+      @if $i > 1 {
+        $value: $value * $base;
+      }
+    }
+    @if $exponent % 1 != 0 {
+      $value: $value * sqrt($base);
+    }
+  }
+  @else {
+    @for $i from 0 through (-1 * ceil($exponent)) {
+      $value: $value / $base;
+    }
+    @if $exponent % 1 != 0 {
+      $value: $value / (sqrt($base));
+    }
+  }
+  @return $value * $unit;
+}

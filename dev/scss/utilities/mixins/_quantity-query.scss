@@ -1,0 +1,40 @@
+/***
+ * Quantity Query
+ *
+ * Mixins to allow styles to be set based on at-least, at-most, and exactly `n`
+ * number of an element.
+ *
+ * code:
+ *   @include qqAtLeast ($n) {
+ *     @content;
+ *   }
+ *
+ *   @include qqAtMost ($n) {
+ *     @content;
+ *   }
+ *
+ *   @include qqExactly ($n) {
+ *     @content;
+ *   }
+ *
+ * @param {number} $n - how many elements to query against
+ * @param @content - the styles to apply to it
+ */
+@mixin qqAtLeast ($n) {
+  &:nth-last-child(#{n}+#{$n}),
+  &:nth-last-child(#{n}+#{$n}) ~ & {
+    @content;
+  }
+}
+@mixin qqAtMost ($n) {
+  &:nth-last-child(#{-n}+#{$n}):first-child,
+  &:nth-last-child(#{-n}+#{$n}):first-child ~ & {
+    @content;
+  }
+}
+@mixin qqExactly ($n) {
+  &:nth-last-child(#{n}+#{$n}):nth-last-child(#{-n}+#{$n}):first-child,
+  &:nth-last-child(#{n}+#{$n}):nth-last-child(#{-n}+#{$n}):first-child ~ & {
+    @content;
+  }
+}

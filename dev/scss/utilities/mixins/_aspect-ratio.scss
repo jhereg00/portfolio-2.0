@@ -1,0 +1,16 @@
+/***
+ * Aspect Ratio
+ *
+ * Gets padding for correct aspect ratio, and sets height to 0.
+ *
+ * code:
+ *   aspectRatio($width, $height)
+ *
+ * @param {number} $width - comparative width of the ratio. The 'x' in x:y
+ * @param {number} $height - comparative height of the ratio. The 'y' in x:y
+ */
+@mixin aspectRatio($width, $height) {
+  position: relative;
+  padding: ($height / $width) * 100% 0 0 0;
+  height: 0;
+}

@@ -1,0 +1,14 @@
+@import 'https://fonts.googleapis.com/css?family=Cambay:400,400i,700,700i|Prompt:600';
+
+$font-primary: "Cambay","Helvetica Neue","Arial",sans-serif;
+$font-secondary: "Prompt","Arial",sans-serif;
+
+@mixin font-primary {
+  font-family: $font-primary;
+	letter-spacing: .025em;
+}
+@mixin font-secondary {
+	font-family: $font-secondary;
+	letter-spacing: 0;
+	font-weight: 600;
+}

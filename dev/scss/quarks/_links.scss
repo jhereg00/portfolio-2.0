@@ -1,0 +1,24 @@
+/***
+ * Links
+ *
+ * html:
+ *   <p>Here's something that's fun. Get away from those little Christmas tree
+ *   things we used to make in school. We'll take a little bit of
+ *   <a href="#">Van Dyke Brown</a>. This is gonna be a happy little seascape.
+ *   We tell people sometimes: we're like drug dealers, <a href="#">come into
+ *   town</a> and get everybody absolutely addicted to painting. It doesn't
+ *   take much to get you addicted.</p>
+ */
+
+$link-color: $brand-secondary-dark;
+$hover-color: $brand-secondary;
+
+a {
+  color: $link-color;
+  transition: color $transition-time;
+  text-decoration: none;
+  font-weight: 600;
+  &:hover {
+    color: $hover-color;
+  }
+}

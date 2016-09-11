@@ -1,0 +1,49 @@
+/***
+ * Square Root Function
+ *
+ * Gets the square root of a number (within a margin of error)
+ *
+ * Useful for diagonal/Pythagorean stuff.
+ *
+ * code:
+ *   sqrt($num)
+ *
+ * @param {number} $num - number to get square root of
+ * @returns {number}
+ */
+@function approximateSq($num, $approx) {
+  $root : (( $num / $approx ) + $approx) / 2;
+  @return $root;
+}
+@function sqrt($num) {
+  $unit: $num / stripUnits($num);
+  $root: 1;
+  $num: stripUnits($num);
+  $upperBounds : ($num / 2) + 1; //never need over half the main number. Add one just to be sure!
+  $loops : $upperBounds;
+  @if $num >= 4 {
+    @for $test from 2 through (round($upperBounds)) {
+      $sq : $test * $test;
+      @if $sq <= $num {
+        $root : $test;
+      }
+    }
+  }
+  @else {
+    $test: 1.1;
+    @while $test < $upperBounds {
+      $sq : $test * $test;
+      @if $sq <= $num {
+        $root : $test;
+      }
+      $test: $test + .1;
+    }
+  }
+
+  // increase accuracy
+  @for $i from 1 through 2 {
+    $root : (approximateSq($num, $root));
+  }
+
+  @return $root * $unit;
+}

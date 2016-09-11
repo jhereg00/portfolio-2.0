@@ -1,0 +1,14 @@
+/***
+ * Blockquote
+ *
+ * Really just a reset
+ *
+ * html:
+ *   <blockquote>
+ *     <p>"Some content that's a quote."</p>
+ *   </blockquote>
+ */
+blockquote {
+  margin: $vr 0;
+  padding: 0;
+}

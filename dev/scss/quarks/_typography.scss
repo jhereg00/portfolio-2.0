@@ -1,0 +1,52 @@
+/***
+ * Typography
+ *
+ * Default text styles.
+ *
+ * html:
+ *   <h1 class="super">Heading Level 1</h1>
+ *   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet adipisci illo, veniam cumque consequuntur, explicabo, animi enim libero magnam unde commodi, dolorem deserunt nemo obcaecati et aut totam saepe sed!</p>
+ *   <h1>Heading Level 1</h1>
+ *   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eveniet adipisci illo, veniam cumque consequuntur, explicabo, animi enim libero magnam unde commodi, dolorem deserunt nemo obcaecati et aut totam saepe sed!</p>
+ *   <h2>Heading Level 2</h2>
+ *   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Veniam nulla ducimus, architecto sint, et officia temporibus quam iure, pariatur labore veritatis. Placeat cum voluptate aliquid, odit itaque dignissimos perspiciatis, error?</p>
+ *   <h3>Heading Level 3</h3>
+ *   <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Saepe aperiam aspernatur eum harum tempora distinctio magnam, officiis inventore obcaecati. Consequuntur in quasi ratione enim ex unde molestias iure et praesentium.</p>
+ *   <h4>Heading Level 4</h4>
+ *   <p>Unde quo, minus eaque eligendi cum tempore, nulla, accusamus est labore tenetur modi eveniet obcaecati voluptas eius vitae vero dolorem nobis culpa nihil. Itaque saepe suscipit odit fugit quidem culpa.</p>
+ *   <p>Accusantium recusandae, dignissimos rerum quaerat voluptatem quis itaque deleniti sequi autem explicabo dolore delectus, doloremque eos. Accusantium eius, debitis voluptates adipisci aspernatur rem voluptatum, delectus, tempore accusantium dolorum cumque error.</p>
+ */
+.super {
+	@include super;
+	@include font-secondary;
+	margin: 0 auto $vr;
+}
+h1,.h1 {
+  @include h1;
+	@include font-secondary;
+  margin: $vr * 4 auto $vr * 2;
+}
+h2,.h2 {
+  @include h2;
+	@include font-secondary;
+  margin: $vr * 4 auto $vr;
+}
+h3,.h3 {
+  @include h3;
+	@include font-secondary;
+  margin: $vr * 3 auto $vr;
+}
+h4,.h4 {
+  @include h4;
+	@include font-secondary;
+  margin: $vr * 3 auto $vr;
+}
+p {
+  margin: $vr auto;
+	& + & {
+		margin-top: $vr * 2;
+	}
+}
+strong {
+  font-weight: 700;
+}

@@ -1,0 +1,94 @@
+/***
+ * Pi
+ *
+ * Just returns pi to 11 decimal places.
+ *
+ * code: pi()
+ * @returns 3.14159265359
+ */
+@function pi() {
+  @return 3.14159265359;
+}
+
+/***
+ * Radians from Degrees
+ *
+ * code: rad($angle);
+ *
+ * @param {number with 'deg' as unit} $angle
+ * @returns $angle converted to radians, unitless
+ */
+@function rad($angle) {
+  $unit: unit($angle);
+  $unitless: $angle / ($angle * 0 + 1);
+  // If the angle has 'deg' as unit, convert to radians.
+  @if $unit == deg {
+    $unitless: $unitless / 180 * pi();
+  }
+  @return $unitless;
+}
+
+/***
+ * Sine
+ *
+ * code: sin($angle);
+ *
+ * @param {number} $angle
+ * @returns {unitless number}
+ */
+@function sin($angle) {
+  $sin: 0;
+  $angle: rad($angle);
+  // Iterate a bunch of times.
+  @for $i from 0 through 10 {
+    $sin: $sin + pow(-1, $i) * pow($angle, (2 * $i + 1)) / fact(2 * $i + 1);
+  }
+  @return $sin;
+}
+
+/***
+ * Cosine
+ *
+ * code: cos($angle);
+ *
+ * @param {number} $angle
+ * @returns {unitless number}
+ */
+@function cos($angle) {
+  $cos: 0;
+  $angle: rad($angle);
+  // Iterate a bunch of times.
+  @for $i from 0 through 10 {
+    $cos: $cos + pow(-1, $i) * pow($angle, 2 * $i) / fact(2 * $i);
+  }
+  @return $cos;
+}
+
+/***
+ * Tangent
+ *
+ * code: tan($angle);
+ *
+ * @param {number} $angle
+ * @returns {unitless number}
+ */
+@function tan($angle) {
+  @return sin($angle) / cos($angle);
+}
+
+/***
+ * Translate By Angle
+ *
+ * Returns a translate2d string with how far to move an object based on the passed
+ * distance and angle. This should be included in a transform property.
+ *
+ * code:
+ *   transform: translateDistanceAtAngle($dist, $angle);
+ *
+ * @param {number with unit} $dist
+ * @param {number, degrees or radians} $angle
+ * @returns {string} translate(x, y);
+ */
+@function translateDistanceAtAngle ($dist,$angle) {
+  @return translate( $dist * cos($angle) , $dist * sin($angle) );
+}

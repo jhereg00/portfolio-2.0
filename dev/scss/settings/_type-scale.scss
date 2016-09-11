@@ -1,0 +1,64 @@
+/***
+ * Type Scale mixins
+ *
+ * Sass mixins for setting font-size and line-height.
+ *
+ * Based on Gridlover.
+ *
+ * **Mobile**:
+ *
+ * **Desktop**: 18, 1.75, 1.66
+ *
+ * code:
+ *   @include h1;
+ *   @include h2;
+ *   @include h3;
+ *   @include h4;
+ *   @include body;
+ *   @include small;
+ */
+@mixin super () {
+	@include mq ($bp-large) {
+		font-size: pxToRem(137);
+		line-height: $vr * 9;
+	}
+}
+@mixin h1 () {
+  font-size: pxToRem(42);
+  line-height: $vr * 3;
+  @include mq ($bp-medium) {
+    font-size: pxToRem(82);
+    line-height: $vr * 6;
+  }
+}
+@mixin h2 () {
+  font-size: pxToRem(32);
+  line-height: $vr * 2;
+  @include mq ($bp-medium) {
+    font-size: pxToRem(50);
+    line-height: $vr * 4;
+  }
+}
+@mixin h3 () {
+  font-size: pxToRem(24);
+  line-height: $vr * 2;
+  @include mq ($bp-medium) {
+    font-size: pxToRem(30);
+		line-height: $vr * 2;
+  }
+}
+@mixin h4 () {
+  font-size: pxToRem(20);
+  line-height: $vr * 2;
+  @include mq ($bp-medium) {
+    font-size: pxToRem(24);
+  }
+}
+@mixin body () {
+  font-size: pxToRem(18);
+  line-height: $vr * 2;
+}
+@mixin small () {
+  font-size: pxToRem(14);
+  line-height: $vr * 1;
+}

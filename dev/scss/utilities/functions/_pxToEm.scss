@@ -1,0 +1,16 @@
+/***
+ * pxToEm function
+ *
+ * Converts pixels to EMs so we can keep our units consistent.  Assumes 1em is
+ * 16px, or you can pass a different base.
+ *
+ * code:
+ *   pxToEm($px[,$base]);
+ *
+ * @param {number} $px
+ * @param {number, optional} $base - font-size of parent element, default: 16px
+ * @returns {ems}
+ */
+@function pxToEm ($px, $base: 16) {
+  @return 1em * stripUnits($px) / $base;
+}

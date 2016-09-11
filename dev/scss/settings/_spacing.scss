@@ -1,0 +1,18 @@
+// Visual Rhythm
+//
+// Variables that allow us to maintain consistent spacing of objects. **USE THEM!**
+//
+// $vr - vertical rhythm. Vertical padding, vertical margin, and line heights should all be multiples of this variable.
+// $wr - horizontal rhythm (named 'wr' because 'hr' was getting confused with the html &lt;hr&gt; element). Horizontal padding and horizontal margin should be multiples of this variable.
+//
+// Styleguide 1.3
+
+// vertical rhythm
+$vr: pxToRem(16);
+$wr: $vr;
+
+// base grid width
+$max-width: pxToRem(960);
+@function n-col-width ($cols) {
+  @return (($max-width / 12 - $wr) * $cols + $wr * ($cols - 1));
+}
