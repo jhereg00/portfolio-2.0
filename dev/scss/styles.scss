@@ -79,6 +79,9 @@
  * >
  * >\- http://www.smashingmagazine.com/2013/08/other-interface-atomic-design-sass/
  */
+@import
+	'molecules/link-work'
+	;
 
 /***
  * Organisms
@@ -88,6 +91,10 @@
  * >
  * >\- http://bradfrost.com/blog/post/atomic-web-design/#organisms
  */
+@import
+	'organisms/pane',
+	'organisms/list-work'
+	;
 
 /**
  * Extras

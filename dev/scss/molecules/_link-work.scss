@@ -1,0 +1,62 @@
+/***
+ * Work Link
+ *
+ * html:
+<a href="#" class="link-work">
+  <ul class="link-work__skills">
+
+  </ul>
+  <h4 class="link-work__title">Some Awesome Piece</h4>
+  <div class="link-work__halftone js-make-halftone" data-halftone="/images/hobbies/guitar.jpg"></div>
+</a>
+ */
+.link-work {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	padding: $vr $wr;
+	background: $neutral-light;
+	text-decoration: none;
+	transition: background $transition-time * 2;
+	color: $text-primary-light;
+
+	&:hover {
+		background: $white;
+		.link-work__title {
+			color: $brand-primary;
+		}
+	}
+
+	@include mq ($bp-medium) {
+		padding: $vr $wr * 2;
+	}
+}
+.link-work__skills {
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.link-work__title {
+	@include h3;
+	margin: 0;
+	color: $text-primary;
+	transition: color $transition-time * 2;
+}
+.link-work__halftone {
+	position: absolute;
+	top: 0; right: 0; bottom: 0; left: 90vw;
+	pointer-events: none;
+	z-index: -1;
+	@include mq ($bp-medium) {
+		left: 50vw;
+	}
+	@include mq ($bp-large) {
+		left: 33.333vw;
+	}
+
+	canvas {
+		position: absolute;
+		top: 0; left: 0;
+		width: 100%; height: 100%;
+	}
+}

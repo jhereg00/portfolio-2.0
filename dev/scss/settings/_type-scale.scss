@@ -5,7 +5,7 @@
  *
  * Based on Gridlover.
  *
- * **Mobile**:
+ * **Mobile**: 18, 1.75, 1.4
  *
  * **Desktop**: 18, 1.75, 1.66
  *
@@ -18,13 +18,15 @@
  *   @include small;
  */
 @mixin super () {
+	font-size: pxToRem(70);
+	line-height: $vr * 5;
 	@include mq ($bp-large) {
 		font-size: pxToRem(137);
 		line-height: $vr * 9;
 	}
 }
 @mixin h1 () {
-  font-size: pxToRem(42);
+  font-size: pxToRem(50);
   line-height: $vr * 3;
   @include mq ($bp-medium) {
     font-size: pxToRem(82);
@@ -32,7 +34,7 @@
   }
 }
 @mixin h2 () {
-  font-size: pxToRem(32);
+  font-size: pxToRem(35);
   line-height: $vr * 2;
   @include mq ($bp-medium) {
     font-size: pxToRem(50);
@@ -40,7 +42,7 @@
   }
 }
 @mixin h3 () {
-  font-size: pxToRem(24);
+  font-size: pxToRem(25);
   line-height: $vr * 2;
   @include mq ($bp-medium) {
     font-size: pxToRem(30);
@@ -48,7 +50,7 @@
   }
 }
 @mixin h4 () {
-  font-size: pxToRem(20);
+  font-size: pxToRem(21);
   line-height: $vr * 2;
   @include mq ($bp-medium) {
     font-size: pxToRem(24);

@@ -10,15 +10,28 @@
  *   take much to get you addicted.</p>
  */
 
-$link-color: $brand-secondary-dark;
-$hover-color: $brand-secondary;
+$link-color: $brand-primary;
+$hover-color: $brand-primary-light;
 
-a {
+p a {
   color: $link-color;
-  transition: color $transition-time;
   text-decoration: none;
   font-weight: 600;
+	padding: 0 .15em;
+	margin: 0 -.15em;
+
+	// experiment
+	background-image:
+		linear-gradient(45deg, $brand-primary 50%, transparent 50%),
+		linear-gradient(45deg, $brand-secondary-light 50%, transparent 50%),
+		linear-gradient(45deg, rgba($brand-primary-light, .1) 50%, transparent 50%);
+	background-size: 200% pxToRem(3), 200% pxToRem(3), 200% calc(1.2em + #{pxToRem(3)});
+	background-repeat: no-repeat;
+	background-position: 70% 1.2em, 65% 1.2em, calc(100% - .1em) top;
+	transition: background-position $transition-time $ease-soft, background-size $transition-time $ease-soft;
+
   &:hover {
-    color: $hover-color;
+		background-position: 10% 1.2em, 0 1.1em, 5% top;
+		background-size: 200% pxToRem(3), 200% pxToRem(4), 200% calc(1.2em + #{pxToRem(3)});
   }
 }

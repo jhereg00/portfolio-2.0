@@ -78,4 +78,6 @@ module.exports = function (cb) {
   // copy any vendor scripts
   gulp.src(global.devPath + '/js/vendor/*')
     .pipe(gulp.dest(global.distPath + '/js/vendor'));
+  gulp.src(global.devPath + '/js/glsl/*')
+    .pipe(gulp.dest(global.distPath + '/js/glsl'));
 }

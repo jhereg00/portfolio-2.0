@@ -1,0 +1,58 @@
+/***
+ * Work List
+ *
+ * Full page section that lists work pieces.
+ *
+ * Relies on some JS, too.
+ *
+ * html:
+<nav class="list-work">
+  <ul class="list-work__list">
+    <li class="list-work__item"><a href="" class="list-work__link">Piece 1</a></li>
+    <li class="list-work__item"><a href="" class="list-work__link">Piece 2</a></li>
+    <li class="list-work__item"><a href="" class="list-work__link">Piece 3</a></li>
+  </ul>
+</nav>
+ */
+.list-work {
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: 100%;
+	perspective: 400px;
+	perspective-origin: 0 50%;
+	background: $brand-primary-dark;
+}
+.list-work__list {
+	margin: 0;
+	padding: 0;
+	height: 100%;
+	max-width: 90vw;
+	list-style-type: none;
+	display: flex;
+	flex-direction: column;
+	background: $neutral-light;
+	@include mq ($bp-medium) {
+		max-width: 50%;
+	}
+	@include mq ($bp-large) {
+		max-width: 33.333%;
+	}
+}
+.list-work__item {
+	display: block;
+	margin: 0;
+	padding: 0;
+	flex-grow: 1;
+	flex-basis: 0;
+	transition: transform $transition-time * 2;
+
+	&:hover {
+		//transform: translateZ(5px);
+	}
+
+	.link-work {
+		box-sizing: border-box;
+		height: 100%;
+	}
+}
